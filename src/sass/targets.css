@@ -1,0 +1,17 @@
+.left-drop-target {
+  background: red;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.right-drop-target {
+  background: green;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

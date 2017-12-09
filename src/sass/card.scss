@@ -1,0 +1,40 @@
+.card {
+  position: absolute;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 250px;
+  border-radius: 7px;
+  background: rgb(255, 254, 249);
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    color: rgb(26, 26, 26);
+    margin: 1em auto .25em auto;
+  }
+
+  .stars {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .star {
+      width: 10%;
+      height: 50px;
+      margin: 0 5px;
+      path {
+        fill: #d48f27;
+      }
+      &:not(.active) {
+        .inside {
+          fill: none !important;
+        }
+      }
+    }
+  }
+}
