@@ -1,31 +1,41 @@
 import React from "react";
-import { DragSource } from "react-dnd";
-import { getEmptyImage } from "react-dnd-html5-backend";
+import { Draggable } from "react-beautiful-dnd";
 import * as constants from "../constants";
 import { Star } from "./svgs";
 
-const cardSource = {
-  beginDrag(props) {
-    return props.worker;
-  }
-};
-
-const collect = (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  connectDragPreview: connect.dragPreview(),
-  isDragging: monitor.isDragging(),
-  getItem: monitor.getItem(),
-  offset: monitor.getInitialClientOffset()
-});
-
 class Card extends React.Component {
-  componentDidMount() {
-    const {worker} = this.props;
-    this.props.connectDragPreview(
-      <div>Hello</div>
-      , {
-      captureDraggingState: true
-    });
+  renderCard = () => {
+    const {worker, index} = this.props;
+
+    return (
+      <div className="card">
+        <img src={`https://randomuser.me/api/portraits/${worker.gender}/${worker.id}.jpg`} alt="worker"/>
+        <p>{worker.name}</p>
+        {this.renderStars()}
+      </div>
+    )
+  }
+
+  renderDraggableCard = () => {
+    const {worker, index} = this.props;
+
+    return (
+      <Draggable draggableId={worker.id} type={constants.TYPE_CARD}>
+      {(provided, snapshot) => {
+          const styles = {
+            ...provided.draggableStyle,
+            zIndex: 100
+          }
+          return (
+            <div ref={provided.innerRef} className="card" style={styles} {...provided.dragHandleProps}>
+              <img src={`https://randomuser.me/api/portraits/${worker.gender}/${worker.id}.jpg`} alt="worker"/>
+              <p>{worker.name}</p>
+              {this.renderStars()}
+            </div>
+          );
+        }}
+      </Draggable>
+    )
   }
 
   renderStars = () => {
@@ -37,19 +47,8 @@ class Card extends React.Component {
   }
 
   render() {
-    const { worker, connectDragSource, isDragging } = this.props;
-    const styles = {
-      opacity: isDragging ? 0.5 : 1
-    };
-
-    return connectDragSource(
-      <div className="card" style={styles}>
-        <img src={`https://randomuser.me/api/portraits/${worker.gender}/${worker.id}.jpg`} alt="worker"/>
-        <p>{worker.name}</p>
-        {this.renderStars()}
-      </div>
-    );
+    return this.props.index === 0 ? this.renderDraggableCard() : this.renderCard();
   }
 }
 
-export default DragSource(constants.TYPE_CARD, cardSource, collect)(Card);
+export default Card;
