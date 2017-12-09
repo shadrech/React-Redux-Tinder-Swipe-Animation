@@ -14,15 +14,18 @@ const collect = (connect, monitor) => {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
-    canDrop: monitor.canDrop()
+    canDrop: monitor.canDrop(),
+    itemDragged: monitor.getItem()
   };
 }
 
 class LeftDropTarget extends React.Component {
   render() {
-    return (
+    const {connectDropTarget, itemDragged} = this.props;
+
+    return connectDropTarget(
       <div className="left-drop-target">
-        
+        <p>Dragged persons {itemDragged ? itemDragged.name : "null"}</p>
       </div>
     );
   }
