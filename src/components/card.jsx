@@ -25,7 +25,7 @@ class Card extends React.Component {
   }
 
   renderDraggableCard = () => {
-    const {worker, index} = this.props;
+    const {worker} = this.props;
 
     return (
       <Draggable draggableId={worker.id} type={constants.TYPE_CARD}>

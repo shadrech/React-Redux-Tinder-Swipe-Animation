@@ -1,17 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Droppable } from "react-beautiful-dnd";
 import * as constants from "../../constants";
 import Card from "../card";
 
-import data from "../../data";
-
-class LeftDropTarget extends React.Component {
+class InventoryDropTarget extends React.Component {
   render() {
     return (
       <Droppable droppableId={constants.DROPPABLE_INVENTORY} type={constants.TYPE_CARD}>
         {(provided, snapshot) => (
           <div className="inventory-drop-target" ref={provided.innerRef}>
-            {data.map((worker, i) => <Card key={i} worker={worker} index={i} />)}
+            {this.props.workers.map((worker, i) => <Card key={i} worker={worker} index={i} />)}
           </div>
         )}
       </Droppable>
@@ -19,4 +18,9 @@ class LeftDropTarget extends React.Component {
   }
 }
 
-export default LeftDropTarget;
+const mapStateToProps = (state) => ({
+  workers: state.inventory.workers,
+  fetching: state.inventory.isFetching
+});
+
+export default connect(mapStateToProps)(InventoryDropTarget);

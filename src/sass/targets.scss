@@ -6,28 +6,54 @@
     overflow: hidden;
   }
 
-  .left-drop-target {
-    background: red;
-    width: 33.333333%;
-    height: 100%;
-    position: relative;
-    display: inline-block;
-  }
-
   .inventory-drop-target {
     position: relative;
     display: inline-block;
     width: 33.333333%;
     height: 100%;
-    background: grey;
+    background: lightgrey;
+  }
+
+  .target-circle {
+    position: absolute;
+    height: 100%;
+    width: 50vw;
+    border-radius: 50%;
+    background: none;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+
+  .left-drop-target {
+    background: lightgrey;
+    width: 33.333333%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+
+    .target-circle {
+      box-shadow: 15vw 0px 190px 80px #9a0404 !important;
+      left: -50vw;
+      &.active {
+        opacity: .5;
+      }
+    }
   }
 
   .right-drop-target {
-    background: green;
+    background: lightgrey;
     width: 33.333333%;
     height: 100%;
     min-height: 100%;
     position: relative;
     display: inline-block;
+
+    .target-circle {
+      box-shadow: -15vw 0px 190px 80px #3c7018;
+      left: 30vw;
+      &.active {
+        opacity: .5;
+      }
+    }
   }
 }
