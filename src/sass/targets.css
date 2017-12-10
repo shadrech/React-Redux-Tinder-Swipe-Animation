@@ -1,8 +1,8 @@
 .container {
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   .container div[class$="-drop-target"] {
-    box-sizing: border-box;
-    overflow: hidden; }
+    box-sizing: border-box; }
   .container .inventory-drop-target {
     position: relative;
     display: inline-block;
@@ -45,3 +45,10 @@
       left: 100% !important; }
       .container .right-drop-target .target-circle.active {
         opacity: .5; }
+  @media screen and (max-width: 767px) {
+    .container .right-drop-target, .container .left-drop-target {
+      width: 47.5%; }
+    .container .inventory-drop-target {
+      width: 5%; }
+    .container .target-circle {
+      z-index: 1; } }

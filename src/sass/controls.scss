@@ -26,8 +26,12 @@
   #dislike {
     svg {
       path {
-        fill: grey;
+        fill: #808080;
       }
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    bottom: 50px;
   }
 }

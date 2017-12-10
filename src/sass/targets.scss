@@ -1,9 +1,9 @@
 .container {
   height: 100vh;
+  overflow: hidden;
 
   div[class$="-drop-target"] {
     box-sizing: border-box;
-    overflow: hidden;
   }
 
   .inventory-drop-target {
@@ -63,6 +63,18 @@
       &.active {
         opacity: .5;
       }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .right-drop-target, .left-drop-target {
+      width: 47.5%;
+    }
+    .inventory-drop-target {
+      width: 5%;
+    }
+    .target-circle {
+      z-index: 1;
     }
   }
 }
