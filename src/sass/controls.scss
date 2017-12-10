@@ -1,0 +1,33 @@
+.controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  bottom: 20%;
+
+  #like, #dislike {
+    width: 50px;
+    margin: 0 25px;
+    svg {
+      width: 100%;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #like {
+    svg {
+      path {
+        fill: #d48f27;
+      }
+    }
+  }
+  #dislike {
+    svg {
+      path {
+        fill: grey;
+      }
+    }
+  }
+}

@@ -14,14 +14,14 @@ function addWorkerToUnselected(worker) {
   };
 }
 
-export function selectWorker(id) {
+export function selectWorker() {
   return (dispatch, getState) => {
     const worker = getState().inventory.workers[0];
     dispatch(addWorkerToSelected(worker));
   };
 }
 
-export function unselectWorker(id) {
+export function unselectWorker() {
   return (dispatch, getState) => {
     const worker = getState().inventory.workers[0];
     dispatch(addWorkerToUnselected(worker));

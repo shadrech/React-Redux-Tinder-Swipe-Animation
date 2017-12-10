@@ -6,6 +6,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import LeftDropTarget from "./droppables/left-drop-target";
 import RightDropTarget from "./droppables/right-drop-target";
 import InventoryDropTarget from "./droppables/inventory-drop-target";
+import Controls from "./controls";
 import * as constants from "../constants";
 import { selectWorker, unselectWorker } from "../actions";
 
@@ -41,7 +42,8 @@ class Container extends React.Component {
         <div className="container">
           <LeftDropTarget />
           <InventoryDropTarget />
-          <RightDropTarget />        
+          <RightDropTarget />
+          <Controls />
         </div>
       </DragDropContext>
     );

@@ -12,6 +12,7 @@ class LeftDropTarget extends React.Component {
           <div className="left-drop-target" ref={provided.innerRef}>
             <div className={`target-circle ${snapshot.isDraggingOver ? "active" : ""}`}></div>
 
+            {/* Draggable acts as a magnet to draw draggable cards to its position */}
             <Draggable draggableId="LEFT_DUMMY_NODE" type={constants.TYPE_CARD}>
               {(provided, snapshot) => {
                 return (

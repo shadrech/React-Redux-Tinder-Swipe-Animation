@@ -27,7 +27,7 @@
     .container .left-drop-target .card {
       left: -250px !important; }
     .container .left-drop-target .target-circle {
-      box-shadow: 15vw 0px 190px 80px #9a0404 !important;
+      box-shadow: 15vw 0px 190px 80px #552222 !important;
       left: -50vw; }
       .container .left-drop-target .target-circle.active {
         opacity: .5; }
@@ -41,7 +41,7 @@
     .container .right-drop-target .card {
       left: 100% !important; }
     .container .right-drop-target .target-circle {
-      box-shadow: -15vw 0px 190px 80px #3c7018;
+      box-shadow: -15vw 0px 190px 80px #354926;
       left: 100% !important; }
       .container .right-drop-target .target-circle.active {
         opacity: .5; }
