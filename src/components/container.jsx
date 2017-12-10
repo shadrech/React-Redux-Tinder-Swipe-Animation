@@ -10,13 +10,6 @@ import * as constants from "../constants";
 import { selectWorker, unselectWorker } from "../actions";
 
 class Container extends React.Component {
-  onDragStart = (initial) => {
-    // initial.draggableId: the id of the Draggable that is now dragging
-
-    // initial.type: the type of the Draggable that is now dragging
-
-    // initial.source: the location (droppableId and index) of where the dragging item has started within a Droppable.
-  }
   onDragEnd = (result) => {
     // result.draggableId: the id of the Draggable that was dragging.
 

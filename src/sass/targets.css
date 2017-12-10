@@ -22,7 +22,10 @@
     width: 33.333333%;
     height: 100%;
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    text-align: right; }
+    .container .left-drop-target .card {
+      left: -250px !important; }
     .container .left-drop-target .target-circle {
       box-shadow: 15vw 0px 190px 80px #9a0404 !important;
       left: -50vw; }
@@ -35,8 +38,10 @@
     min-height: 100%;
     position: relative;
     display: inline-block; }
+    .container .right-drop-target .card {
+      left: 100% !important; }
     .container .right-drop-target .target-circle {
       box-shadow: -15vw 0px 190px 80px #3c7018;
-      left: 30vw; }
+      left: 100% !important; }
       .container .right-drop-target .target-circle.active {
         opacity: .5; }
