@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import * as constants from "../../constants";
-import Card from "../card";
 
 class LeftDropTarget extends React.Component {
   render() {

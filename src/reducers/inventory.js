@@ -15,6 +15,9 @@ export default function reducer(state = INITIAL_STATE, action) {
     case types.ADD_TO_UNSELECTED:
       return Object.assign(state, {workers: state.workers.slice(1)});
 
+    case types.FETCH_WORKERS_SUCCESS:
+      return Object.assign(state, {workers: [...state.workers, ...action.payload.workers]});
+
     default:
       return state;
   }
